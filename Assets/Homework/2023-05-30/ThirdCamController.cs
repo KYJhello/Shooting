@@ -8,6 +8,7 @@ public class ThirdCamController : MonoBehaviour
     [SerializeField] Transform cameraRoot;
     [SerializeField] float cameraSensitivity;
     [SerializeField] float lookDistance;
+    [SerializeField] Transform aimTarget;
 
     private Vector2 lookDelta;
     private float xRotation;
@@ -34,6 +35,7 @@ public class ThirdCamController : MonoBehaviour
     {
         // 보고있는 물체의 위치
         Vector3 lookPoint = Camera.main.transform.position + Camera.main.transform.forward * lookDistance;
+        aimTarget.position = lookPoint;
         // 보고있는 방향의 수직값은 현재의 수직값
         lookPoint.y = transform.position.y;
         // 룩포인트 보기

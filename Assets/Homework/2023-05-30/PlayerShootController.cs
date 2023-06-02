@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerShootController : MonoBehaviour
 {
     [SerializeField] Transform shootStartP;
+    [SerializeField] private int damage;
+    [SerializeField] private ParticleSystem muzzleEffect;
+
+    private ParticleSystem bulletEffect;
 
     private void Awake()
     {
